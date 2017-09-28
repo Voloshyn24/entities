@@ -1,0 +1,29 @@
+﻿@model WebApplication1.Models.Player
+
+
+<h2>Изменение игрока</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Футболист</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <p>
+            Имя игрока <br />
+            @Html.EditorFor(model => model.Name)
+        </p>
+
+        <p>
+            Команда <br />
+            @Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)
+        </p>
+        <p>
+            <input type="submit" value="Сохранить" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Вернуться к списку футболистов", "Index")
+</div>

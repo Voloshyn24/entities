@@ -9,6 +9,10 @@ namespace WebApplication1.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public  IEnumerable<Player> Players { get; set; }
+        public ICollection<Player> Players { get; set; }
+        public Team()
+        {
+            Players = new List<Player>();
+        }
     }
 }

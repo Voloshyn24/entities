@@ -1,0 +1,30 @@
+﻿@model WebApplication1.Models.Player
+
+
+<h2>Добавление нового игрока</h2>
+
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Футболист</legend>
+
+        <p>
+            Имя игрока <br />
+            @Html.EditorFor(model => model.Name)
+        </p>
+
+        <p>
+         
+        <p>
+            Команда <br />
+            @Html.DropDownListFor(model => model.TeamId, ViewBag.Teams as SelectList)
+        </p>
+
+        <p>
+            <input type="submit" value="Добавить игрока" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("К списку игроков", "Index")
+</div>
